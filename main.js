@@ -1,199 +1,341 @@
-// ===== MOBILE MENU TOGGLE =====
-const menuToggle = document.querySelector('.menuToggle');
-const nav = document.querySelector('.nav');
-const navLinks = document.querySelectorAll('.nav li');
-
-menuToggle.addEventListener('click', () => {
-  nav.classList.toggle('active');
-  menuToggle.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('active');
-    menuToggle.classList.remove('active');
-  });
-});
-
-// ===== STICKY HEADER ON SCROLL =====
-const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-// ===== ACTIVE NAV LINK ON SCROLL =====
-const sections = document.querySelectorAll('section');
-const navItems = document.querySelectorAll('.nav li');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    
-    if (pageYOffset >= (sectionTop - 300)) {
-      current = section.getAttribute('id');
-    }
-  });
-  
-  navItems.forEach(item => {
-    item.classList.remove('active');
-    if (item.querySelector('a').getAttribute('href') === `#${current}`) {
-      item.classList.add('active');
-    }
-  });
-});
-
-// ===== SMOOTH SCROLLING FOR ANCHOR LINKS =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-    
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 70,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-// ===== BACK TO TOP BUTTON =====
-const backToTopBtn = document.querySelector('.arrow-back');
-window.addEventListener('scroll', () => {
-  backToTopBtn.classList.toggle('show', window.scrollY > 500);
-});
-
-backToTopBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-
-// ===== FORM SUBMISSION =====
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const formData = {
-      name: this.name.value,
-      email: this.email.value,
-      subject: this.subject.value,
-      message: this.message.value
-    };
-    
-    // Here you would typically send the data to a server
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    
-    // Reset form
-    this.reset();
-    
-    // Reset form labels
-    const labels = this.querySelectorAll('label');
-    labels.forEach(label => {
-      label.style.top = '15px';
-      label.style.fontSize = '1rem';
-    });
-  });
-}
-
-// ===== ANIMATIONS ON SCROLL =====
-const animateOnScroll = () => {
-  const elements = document.querySelectorAll('.hero-text, .hero-image, .about-content, .about-image, .service-card, .contact-form');
-  
-  elements.forEach(element => {
-    const elementPosition = element.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.2;
-    
-    if (elementPosition < screenPosition) {
-      element.style.opacity = '1';
-      element.style.transform = 'translateY(0)';
-    }
-  });
-};
-
-// Set initial state for animated elements
-document.querySelectorAll('.hero-text, .hero-image, .about-content, .about-image, .service-card, .contact-form').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-});
-
-// Run on load and scroll
-window.addEventListener('load', animateOnScroll);
-window.addEventListener('scroll', animateOnScroll);
-
-// ===== SKILL TAGS ANIMATION =====
-const skillTags = document.querySelectorAll('.skill-tag');
-if (skillTags.length > 0) {
-  skillTags.forEach((tag, index) => {
-    tag.style.opacity = '0';
-    tag.style.transform = 'translateY(20px)';
-    tag.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-    
-    // Animate when in view
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    });
-    
-    observer.observe(tag);
-  });
-}
-
-// ===== SERVICE CARDS HOVER EFFECT =====
-const serviceCards = document.querySelectorAll('.service-card');
-serviceCards.forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.transform = 'translateY(-10px)';
-    card.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.1)';
-  });
-  
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'translateY(0)';
-    card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-  });
-});
-
-
-// Project Filtering
 document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      // Add active class to clicked button
-      button.classList.add('active');
+  // Navbar scroll effect
+  const header = document.querySelector('.header');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  
+  // Toggle mobile menu
+  navbarToggler.addEventListener('click', function() {
+      navbarCollapse.classList.toggle('show');
       
-      const filterValue = button.getAttribute('data-filter');
-      
-      projectCards.forEach(card => {
-        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
+      // Change icon based on state
+      const icon = this.querySelector('i');
+      if (navbarCollapse.classList.contains('show')) {
+          icon.setAttribute('data-feather', 'x');
+      } else {
+          icon.setAttribute('data-feather', 'menu');
+      }
+      feather.replace();
   });
+  
+  // Close mobile menu when clicking on a link
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+          if (navbarCollapse.classList.contains('show')) {
+              navbarCollapse.classList.remove('show');
+              navbarToggler.querySelector('i').setAttribute('data-feather', 'menu');
+              feather.replace();
+          }
+      });
+  });
+  
+  // Add scroll class to header
+  window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+      } else {
+          header.classList.remove('scrolled');
+      }
+  });
+  
+  // Initialize scroll if not at top
+  if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+  }
+  
+ // Update fungsi parallax untuk elemen baru
+function updateParallax() {
+    const scrollPosition = window.pageYOffset;
+    const heroSection = document.querySelector('.hero');
+    const heroHeight = heroSection.offsetHeight;
+    const heroOffset = heroSection.offsetTop;
+    
+    if (scrollPosition < heroOffset + heroHeight) {
+        document.querySelectorAll('[data-speed]').forEach(element => {
+            const speed = parseFloat(element.getAttribute('data-speed'));
+            const yPos = -(scrollPosition * speed);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    }
+}
+  
+  window.addEventListener('scroll', updateParallax);
+  window.addEventListener('resize', updateParallax);
+  
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+              const headerHeight = document.querySelector('.header').offsetHeight;
+              const targetPosition = targetElement.offsetTop - headerHeight;
+              
+              window.scrollTo({
+                  top: targetPosition,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
+  
+  // Scroll indicator click event
+  const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+  if (scrollIndicator) {
+      scrollIndicator.addEventListener('click', function() {
+          const aboutSection = document.querySelector('#about');
+          if (aboutSection) {
+              const headerHeight = document.querySelector('.header').offsetHeight;
+              const targetPosition = aboutSection.offsetTop - headerHeight;
+              
+              window.scrollTo({
+                  top: targetPosition,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  }
+});
+
+
+
+//=========== Portfolio Filtering ===========
+function portfolioFilter() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+  filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          button.classList.add('active');
+          
+          const filterValue = button.getAttribute('data-filter');
+          
+          portfolioItems.forEach(item => {
+              if (filterValue === 'all') {
+                  item.style.display = 'block';
+              } else {
+                  const categories = item.getAttribute('data-category').split(',');
+                  if (categories.includes(filterValue)) {
+                      item.style.display = 'block';
+                  } else {
+                      item.style.display = 'none';
+                  }
+              }
+          });
+      });
+  });
+}
+
+// ======== SERVICES ========= //
+// Service Card Animation
+function animateServiceCards() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach((card, index) => {
+        // Initial state (for animation)
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        // Animate in with delay based on index
+        setTimeout(() => {
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 200 * index);
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    animateServiceCards();
+    
+    // Re-animate when services come into view
+    const servicesSection = document.querySelector('.services');
+    if (servicesSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateServiceCards();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(servicesSection);
+    }
+});
+
+// Portfolio Hover Effects
+function portfolioHover() {
+  const portfolioItems = document.querySelectorAll('.portfolio-item-inner');
+  
+  portfolioItems.forEach(item => {
+      const img = item.querySelector('.portfolio-img img');
+      const overlay = item.querySelector('.portfolio-overlay');
+      const overlayContent = item.querySelector('.portfolio-overlay-content');
+      
+      item.addEventListener('mouseenter', () => {
+          img.style.transform = 'scale(1.1)';
+          overlay.style.opacity = '1';
+          overlayContent.style.transform = 'translateY(0)';
+      });
+      
+      item.addEventListener('mouseleave', () => {
+          img.style.transform = 'scale(1)';
+          overlay.style.opacity = '0';
+          overlayContent.style.transform = 'translateY(20px)';
+      });
+  });
+}
+
+// Portfolio Modal
+function portfolioModal() {
+  const modal = document.querySelector('.portfolio-modal');
+  const modalContainer = document.querySelector('.modal-container');
+  const modalClose = document.querySelector('.modal-close');
+  const modalContent = document.querySelector('.modal-content');
+  const viewButtons = document.querySelectorAll('.portfolio-view-btn');
+  
+  // Sample project data (in a real scenario, you might fetch this from an API)
+  const projects = [
+      {
+          id: 1,
+          title: "Rupa DarsanA",
+          category: "Photography Web Portfolio",
+          description: "Dirancang dengan desain responsif dan modern, memastikan tampilan yang optimal di semua perangkat. Menggunakan layout minimalis, fokus utama pada foto, dengan navigasi yang mudah dan galeri gambar interaktif.",
+          image: "assets/images/img1.jpg",
+          client: "Rupa Darsana.",
+          date: "April 2025",
+          technologies: "HTML, CSS, JavaScript",
+          liveUrl: "https://indrahidayt09.github.io/Rupa-Darsana/",
+          githubUrl: "#"
+      },
+      {
+          id: 2,
+          title: "Langit Janji",
+          category: "Wedding Website",
+          description: "Website pernikahan ini dirancang elegan dan responsif, memudahkan pengunjung melihat detail acara, galeri foto, dan jadwal pernikahan. Desain sederhana dan navigasi intuitif membuatnya mudah diakses di semua perangkat.",
+          image: "assets/images/img3.jpg",
+          client: "Langit Janji.",
+          date: "Januri 2025",
+          technologies: "HTML, CSS, JavaScript",
+          liveUrl: "https://indrahidayt09.github.io/Langit-Janji/",
+          githubUrl: "#"
+      },
+      {
+          id: 3,
+          title: "Hijrah Harmoni",
+          category: "Travel Haji & Umrah Website",
+          description: "Didesain responsif dan informatif, memudahkan jamaah mengakses info paket, jadwal keberangkatan, dan layanan. Tampilannya modern dan sederhana, dengan navigasi yang mudah di semua perangkat.",
+          image: "assets/images/img2.jpg",
+          client: "Hijrah Harmoni",
+          date: "November 2024",
+          technologies: "HTML, CSS, JavaScript",
+          liveUrl: "https://indrahidayt09.github.io/Hijrah-Harmoni/",
+          githubUrl: "#"
+      },
+      {
+          id: 4,
+          title: "Sandykala Coffe",
+          category: "Website Jualan Kopi Aceh",
+          description: "Didesain modern dan responsif, menampilkan produk secara menarik dan mudah diakses di semua perangkat. Navigasi simpel memudahkan pelanggan memilih varian kopi, membaca deskripsi, dan melakukan pemesanan dengan cepat.",
+          image: "assets/images/img4.jpg",
+          client: "Sandykala Coffe",
+          date: "September 2024",
+          technologies: "HTML, CSS, JavaScript",
+          liveUrl: "https://indrahidayt09.github.io/SandykalaCoffee/",
+          githubUrl: "#"
+      }
+  ];
+  
+  viewButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const projectId = parseInt(button.getAttribute('data-project'));
+          const project = projects.find(p => p.id === projectId);
+          
+          if (project) {
+              modalContent.innerHTML = `
+                  <img src="${project.image}" alt="${project.title}">
+                  <h2>${project.title}</h2>
+                  <span class="project-category">${project.category}</span>
+                  <p class="project-description">${project.description}</p>
+                  
+                  <div class="project-details">
+                      <div class="detail-item">
+                          <i data-feather="user"></i>
+                          <div>
+                              <h4>Client</h4>
+                              <p>${project.client}</p>
+                          </div>
+                      </div>
+                      <div class="detail-item">
+                          <i data-feather="calendar"></i>
+                          <div>
+                              <h4>Date</h4>
+                              <p>${project.date}</p>
+                          </div>
+                      </div>
+                      <div class="detail-item">
+                          <i data-feather="code"></i>
+                          <div>
+                              <h4>Technologies</h4>
+                              <p>${project.technologies}</p>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="project-links">
+                      <a href="${project.liveUrl}" class="btn live-demo" target="_blank">
+                          <i data-feather="external-link"></i>
+                          Live Demo
+                      </a>
+                      <a href="${project.githubUrl}" class="btn github" target="_blank">
+                          <i data-feather="github"></i>
+                          View Code
+                      </a>
+                  </div>
+              `;
+              
+              modal.classList.add('active');
+              document.body.style.overflow = 'hidden';
+              feather.replace();
+          }
+      });
+  });
+  
+  // Close modal
+  function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+  }
+  
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+          closeModal();
+      }
+  });
+  
+  // Close with ESC key
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+      }
+  });
+}
+
+// Initialize portfolio functionality
+document.addEventListener('DOMContentLoaded', function() {
+  portfolioFilter();
+  portfolioHover();
+  portfolioModal();
 });

@@ -1,378 +1,517 @@
-  <!DOCTYPE html>
-  <html lang="en" dir="ltr">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Portfolio of Indra Hidayat, a professional Front-End Developer specializing in web design, WordPress development, and SEO optimization">
-      <meta name="keywords" content="web developer, front-end developer, WordPress, SEO, web design">
-      <title>Indra Hidayat | Front-End Developer Portfolio</title>
-      <link rel="canonical" href="https://yourportfolio.com">
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="style2.css">
-      <link rel="stylesheet" href="root.css">
-  </head>
-  <body>
-      <!-- Skip Navigation Link for Accessibility -->
-      <a class="skip-link" href="#main-content"></a>
-  
-      <!-- HEADER NAVBAR -->
-      <header role="banner">
-          <nav aria-label="Main navigation">
-              <a href="#" class="logo" aria-label="Portfolio homepage">Portfolio</a>
-              <ul class="nav" role="list">
-                  <li><a href="#home" aria-current="page">Home</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#services">Services</a></li>
-                  <li><a href="#projects">Projects</a></li>
-                  <li><a href="#contact">Contact</a></li>
-              </ul>
-  
-              <div class="social" aria-label="Social media links">
-                  <a href="#" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
-                  <a href="#" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a>
-                  <a href="#" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
-              </div>
-              <button class="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                  <ion-icon name="menu-outline"></ion-icon>
-              </button>
-          </nav>
-      </header>
-  
-      <main id="main-content">
-          
-        <!-- HERO SECTION -->
-          <section id="home" class="hero-section" aria-labelledby="hero-heading">
-              <div class="container">
-
-                  <div class="hero-content">
-                      <div class="hero-text">
-                          <p class="hero-subtitle">Hi, I'm Indra</p>
-                          <h1 id="hero-heading" class="hero-title">Creative web <span>Designer</span></h1>
-                          <p class="hero-description">I design beautiful digital experiences that make people's lives simpler.</p>
-                          
-                          <div class="hero-buttons desktop-buttons">
-                              <a href="#projects" class="btn btn-primary">Portfolio</a>
-                              <a href="#contact" class="btn btn-outline">Contact</a>
-                          </div>
-                      </div>
-                      
-                      <div class="hero-image">
-                          <div class="image-wrapper">
-                              <img src="profil.jpg" alt="Indra Hidayat, Front End Developer" class="profile-img" loading="lazy" width="400" height="400">
-                              <div class="shape-overlay" aria-hidden="true"></div>
-                          </div>
-                          
-                          <div class="hero-buttons mobile-buttons">
-                              <a href="#projects" class="btn btn-primary">Portfolio</a>
-                              <a href="#contact" class="btn btn-outline">Contact</a>
-                          </div>
-                      </div>
-                  </div>
-                  
-              </div>
-          </section>
-  
-          <!-- ABOUT SECTION -->
-          <section id="about" class="about-section" aria-labelledby="about-heading">
-
-              <div class="about-content">
-                  <div class="about-text">
-                      <h2 id="about-heading" class="section-title">About Me</h2>
-                      <p class="about-subtitle">Crafting digital experiences.</p>
-                      <p class="descriptions">I am a Front-End Web Developer specializing in building modern, responsive websites using HTML, CSS, and JavaScript, with expertise in SEO Optimization to ensure websites rank well on search engines like Google.</p>
-                  </div>
-                  
-                  <div class="skills-container">
-                    <div class="skill-tag">UI/UX Design</div>
-                    <div class="skill-tag">Responsive Design</div>
-                    <div class="skill-tag">Interaction Design</div>
-                    <div class="skill-tag">Prototyping</div>
-                    <div class="skill-tag">Front-end Development</div>
-                    <div class="skill-tag">Brand Identity</div>
-                  </div>
-              </div>
-              
-              <div class="about-image">
-                  <img src="profil.jpg" alt="Indra Hidayat at work" class="profile-img" loading="lazy" width="400" height="400">
-                  <div class="shape-overlay" aria-hidden="true"></div>
-              </div>
-
-          </section>
-  
-          <!-- SERVICES SECTION -->
-          <section id="services" class="services-section" aria-labelledby="services-heading">
-
-              <div class="services-content">
-                  <h2 id="services-heading">OUR SERVICES</h2>
-                  <h3>WHAT I DO?</h3>
-                  <button class="btn">View more</button>
-              </div>
-              
-              <div class="services-grid">
-
-                  <article class="service-card glass-card" aria-labelledby="service1-heading">
-                      <div class="service-icon">
-                          <ion-icon name="code-slash-outline"></ion-icon>
-                      </div>
-                      <h3 id="service1-heading">Front End Development</h3>
-                      <p>Build responsive user focused web interfaces</p>
-                      <ul class="service-features" role="list">
-                          <li><ion-icon name="checkmark-circle"></ion-icon> HTML5/CSS3</li>
-                          <li><ion-icon name="checkmark-circle"></ion-icon> JavaScript</li>
-                          <li><ion-icon name="checkmark-circle"></ion-icon> React.js</li>
-                      </ul>
-                      <a href="#contact" class="service-btn" aria-label="Contact for Front End Development">
-                          <ion-icon name="open-sharp"></ion-icon>
-                      </a>
-                  </article>
-              
-                  <article class="service-card glass-card" aria-labelledby="service2-heading">
-                      <div class="service-icon">
-                          <ion-icon name="logo-wordpress"></ion-icon>
-                      </div>
-                      <h3 id="service2-heading">WordPress</h3>
-                      <p>Custom WordPress solutions with optimized performance</p>
-                      <ul class="service-features" role="list">
-                          <li><ion-icon name="checkmark-circle"></ion-icon> Theme Development</li>
-                          <li><ion-icon name="checkmark-circle"></ion-icon> WooCommerce</li>
-                          <li><ion-icon name="checkmark-circle"></ion-icon> SEO Ready</li>
-                      </ul>
-                      <a href="#contact" class="service-btn" aria-label="Contact for WordPress Development">
-                          <ion-icon name="open-sharp"></ion-icon>
-                      </a>
-                  </article>
-
-              </div>
-          </section>
-  
-          <!-- PROJECT SECTIONS -->
-          <section id="projects" class="projects-section" aria-labelledby="projects-heading">
-            <div class="container">
-              <div class="section-header">
-                <h2 class="section-title">My Projects</h2>
-              </div>
-              
-              <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Design</button>
-                <button class="filter-btn" data-filter="wordpress">WordPress</button>
-              </div>
-              
-              <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card glass-card" data-category="web">
-                  <div class="project-image">
-                    <img src="project1.jpg" alt="E-commerce Website">
-                    <div class="project-overlay">
-                      <h3>E-commerce Website</h3>
-                      <p>Modern online store with payment integration</p>
-                    </div>
-                  </div>
-                  <div class="project-info">
-                    <h3>E-commerce Website</h3>
-                    <div class="project-tags">
-                      <span>HTML/CSS</span>
-                      <span>JavaScript</span>
-                      <span>React</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                  </div>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Frontendra, a web designer and front-end developer specializing in modern, responsive websites.">
+    <title>Frontendra | Web Designer & Front-end Developer</title>
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="animation.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="navbar-brand">Frontendra</a>
+            
+            <button class="navbar-toggler" aria-label="Toggle navigation">
+                <i data-feather="menu"></i>
+            </button>
+            
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#articles" class="nav-link">Articles</a></li>
+                </ul>
                 
-                <!-- Project 2 -->
-                <div class="project-card glass-card" data-category="app">
-                  <div class="project-image">
-                    <img src="project2.jpg" alt="Fitness Mobile App">
-                    <div class="project-overlay">
-                      <h3>Fitness App</h3>
-                      <p>Workout tracking and nutrition planner</p>
-                    </div>
-                  </div>
-                  <div class="project-info">
-                    <h3>Fitness App</h3>
-                    <div class="project-tags">
-                      <span>React Native</span>
-                      <span>Firebase</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                  </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card glass-card" data-category="wordpress">
-                  <div class="project-image">
-                    <img src="project3.jpg" alt="Corporate Website">
-                    <div class="project-overlay">
-                      <h3>Corporate Website</h3>
-                      <p>Business site with CMS</p>
-                    </div>
-                  </div>
-                  <div class="project-info">
-                    <h3>Corporate Website</h3>
-                    <div class="project-tags">
-                      <span>WordPress</span>
-                      <span>Elementor</span>
-                      <span>SEO</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                  </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card glass-card" data-category="web">
-                  <div class="project-image">
-                    <img src="project4.jpg" alt="Portfolio Design">
-                    <div class="project-overlay">
-                      <h3>Portfolio Design</h3>
-                      <p>Creative portfolio for designer</p>
-                    </div>
-                  </div>
-                  <div class="project-info">
-                    <h3>Portfolio Design</h3>
-                    <div class="project-tags">
-                      <span>HTML/CSS</span>
-                      <span>GSAP</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                  </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card glass-card" data-category="app">
-                  <div class="project-image">
-                    <img src="project5.jpg" alt="Task Manager">
-                    <div class="project-overlay">
-                      <h3>Task Manager</h3>
-                      <p>Productivity app with cloud sync</p>
-                    </div>
-                  </div>
-                  <div class="project-info">
-                    <h3>Task Manager</h3>
-                    <div class="project-tags">
-                      <span>Flutter</span>
-                      <span>Node.js</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                  </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="project-card glass-card" data-category="wordpress">
-                  <div class="project-image">
-                    <img src="project6.jpg" alt="Online Course Platform">
-                    <div class="project-overlay">
-                      <h3>Online Course Platform</h3>
-                      <p>LMS with payment integration</p>
-                    </div>
-                  </div>
-                  <div class="project-info">
-                    <h3>Online Course Platform</h3>
-                    <div class="project-tags">
-                      <span>WordPress</span>
-                      <span>LearnDash</span>
-                      <span>WooCommerce</span>
-                    </div>
-                    <a href="#" class="project-link">View Project →</a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="view-more">
-                <button class="btn glass-card">View More Projects</button>
-              </div>
+                <!-- <div class="navbar-img">
+                    <img src="profil.jpg" alt="Indra Hidayat | Front End Developer">
+                </div> -->
+
             </div>
-          </section>
-  
-          <!-- CONTACT SECTION -->
-          <section id="contact" class="contact-section" aria-labelledby="contact-heading">         
-              <div class="container">
-
-                <div class="section-header">
-                  <h2 class="section-title">Contact Us</h2>
-                  <p class="section-subtitle">Senang jika bisa bekerja sama dengan anda</p>
+        </nav>
+    </header>
+    
+    <!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="hero-content container">
+        <div class="hero-text">
+            <h1 class="hero-title">Crafting Digital Experiences That <span class="text-highlight">Inspire</span></h1>
+            <p class="hero-subtitle">Seorang pengembang web khususnya dibagian Front-End, yang fokus membuat antarmuka web jadi menarik & user-friendly.</p>
+            
+            <div class="hero-actions">
+                <a href="#portfolio" class="btn btn-primary">Portfolio</a>
+                <a href="#about" class="btn btn-outline">Contact Me</a>
+            </div>
+            
+            <!-- Tech Stack Badges -->
+            <div class="tech-stack">
+                <span>Tech I work with:</span>
+                <div class="badges">
+                    <div class="badge">HTML5</div>
+                    <div class="badge">CSS3</div>
+                    <div class="badge">JavaScript</div>
+                    <div class="badge">React</div>
+                    <div class="badge">Figma</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <!-- Placeholder untuk gambar dengan efek parallax -->
+            <div class="parallax-container">
+                <!-- Layer utama dengan placeholder gradient -->
+                <div class="parallax-main" data-speed="0.1">
+                    <div class="placeholder-image">
+                        <div class="mockup-browser">
+                            <div class="mockup-browser-toolbar">
+                                <div class="circle red"></div>
+                                <div class="circle yellow"></div>
+                                <div class="circle green"></div>
+                            </div>
+                            <div class="mockup-content" data-speed="0">
+                                <!-- Placeholder untuk konten website -->
+                                <div class="mockup-grid">
+                                    <div class="mockup-grid-item code-animation"></div>
+                                    <div class="mockup-grid-item ui-animation">
+                                        <div class="ui-element desktop">Desktop</div>
+                                        <div class="ui-element">Tablet</div>
+                                        <div class="ui-element">Mobile</div>
+                                    </div>
+                                    <div class="mockup-grid-item design-animation">
+                                        <div class="design-stage wireframe"></div>
+                                        <div class="design-stage mockup">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                        <div class="design-stage final"></div>
+                                    </div>
+                                    <div class="mockup-grid-item modern-animation">
+                                        <div class="floating-dots">
+                                            <div class="dot"></div>
+                                            <div class="dot"></div>
+                                            <div class="dot"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="contact-grid">
-                  <!-- Contact Form -->
-                  <div class="contact-form glass-card">
-                    <form id="contactForm">
-                      <div class="form-group">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Your Name</label>
-                      </div>
-                      
-                      <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Email Address</label>
-                      </div>
-                      
-                      <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Your Message</label>
-                      </div>
-                      
-                      <button type="submit" class="submit-btn">
-                        <span>Send Message</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <line x1="22" y1="2" x2="11" y2="13"></line>
-                          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                        </svg>
-                      </button>
-                    </form>
-                  </div>
-                  
-                  <div class="contact-info glass-card">
-                    <h3>Contact Information</h3>
-                    <p>Feel free to reach out through these channels</p>
-                    
-                    <div class="contact-method">
-                      <div class="contact-icon">
-                        <ion-icon name="mail-outline"></ion-icon>
-                      </div>
-                      <div class="contact-details">
-                        <h4>Email</h4>
-                        <a href="mailto:indrahidayatpermana09@gmail.com">indrahidayatpermana09@gmail.com</a>
-                      </div>
-                    </div>
-                    
-                    <div class="contact-method">
-                      <div class="contact-icon">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                      </div>
-                      <div class="contact-details">
-                        <h4>WhatsApp</h4>
-                        <a href="https://wa.me/6281574808331">+62 815-7480-8331</a>
-                      </div>
-                    </div>
-                    
-                    <div class="contact-method">
-                      <div class="contact-icon">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                      </div>
-                      <div class="contact-details">
-                        <h4>Instagram</h4>
-                        <a href="https://instagram.com/yourusername">@yourusername</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <!-- Elemen floating untuk parallax -->
+                <div class="parallax-circle circle-1" data-speed="0"></div>
+                <div class="parallax-circle circle-2" data-speed="0"></div>
+                <div class="parallax-circle circle-3" data-speed="0"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hero-scroll-indicator">
+        <span>Scroll Down</span>
+        <i data-feather="chevron-down"></i>
+    </div>
+</section>
 
+    <!-- ABOUT SECTIONS -->
+<section id="about" class="about section">
+  <div class="container">
+      <div class="section-header">
+          <h2 class="section-title">About <span class="text-highlight">Me</span></h2>
+          <p class="section-subtitle">Hi aku Indra Hidayat</p>
+      </div>
+      
+      <div class="about-content">
+          <div class="about-image">
+              <div class="image-wrapper">
+                  <img src="profil.jpg" alt="Frontendra - Web Designer and Developer" class="profile-img">
+                  <div class="image-overlay"></div>
+                  <div class="shape shape-1"></div>
+                  <div class="shape shape-2"></div>
               </div>
-          </section>
-      </main>
-  
-      <!-- FOOTER SECTION -->
-      <footer>
-        <p class="copyrights">Copyright © 2025 <a href="#">Indra Hidayat</a>. All Right Reserved.</p>
-        <a href="#" class="arrow-back"><ion-icon name="chevron-up-outline"></ion-icon></a>
-    </footer>
+          </div>
+          
+          <div class="about-text">
+              <h3 class="about-heading">Who I Am</h3>
+              <p class="about-description">
+                Saya adalah seorang Front-End Web Developer yang berfokus pada pengembangan tampilan website yang menarik, responsif, dan mudah digunakan. Dengan keahlian dalam HTML, CSS, JavaScript, React, dan Tailwind CSS, saya mampu membangun antarmuka modern yang mendukung pengalaman pengguna yang optimal.
+              </p>
+              
+              <!-- <div class="about-details">
+                  <div class="detail-item">
+                      <i data-feather="user"></i>
+                      <div>
+                          <h4>Name</h4>
+                          <p>Frontendra</p>
+                      </div>
+                  </div>
+                  <div class="detail-item">
+                      <i data-feather="mail"></i>
+                      <div>
+                          <h4>Email</h4>
+                          <p>hello@frontendra.com</p>
+                      </div>
+                  </div>
+                  <div class="detail-item">
+                      <i data-feather="map-pin"></i>
+                      <div>
+                          <h4>Location</h4>
+                          <p>Jakarta, Indonesia</p>
+                      </div>
+                  </div>
+                  <div class="detail-item">
+                      <i data-feather="briefcase"></i>
+                      <div>
+                          <h4>Experience</h4>
+                          <p>5+ Years</p>
+                      </div>
+                  </div>
+              </div> -->
+              
+              <div class="skills">
+                  <h3 class="skills-title">My <span class="text-highlight">Skills</span></h3>
+                  <div class="skills-list">
+                      <div class="skill-item">
+                          <div class="skill-info">
+                              <span>HTML5</span>
+                              <span>Ekspert</span>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 100%;"></div>
+                          </div>
+                      </div>
+                      <div class="skill-item">
+                          <div class="skill-info">
+                              <span>CSS/Tailwind</span>
+                              <span>Ekspert</span>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 100%;"></div>
+                          </div>
+                      </div>
+                      <div class="skill-item">
+                          <div class="skill-info">
+                              <span>JavaScript</span>
+                              <span>Ekspert</span>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 100%;"></div>
+                          </div>
+                      </div>
+                      <div class="skill-item">
+                          <div class="skill-info">
+                              <span>Node.Js</span>
+                              <span>Intermediate</span>
+                          </div>
+                          <div class="skill-bar">
+                              <div class="skill-progress" style="width: 80%;"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="about-actions">
+                  <a href="#" class="btn btn-primary">
+                      Selengkapnya
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 
-    <!-- IONIC-ICON -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- SERVICES SECTIONS -->
+<section id="services" class="services section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">My <span class="text-highlight">Services</span></h2>
+            <p class="section-subtitle">Apa yang bisa saya lakukan untuk membantu mewujudkan visi digitalmu.</p>
+        </div>
 
-    <!-- JAVASCRIPT -->
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon">
+                  <i data-feather="code"></i>
+                </div>
+                <h3 class="service-title">Web Development</h3>
+                <p class="service-description">
+                  Membangun situs web dengan struktur yang solid, tampilan responsif & SEO Friendly.
+                </p>
+                <ul class="service-features">
+                  <li><i data-feather="check"></i> HTML5 / CSS3</li>
+                  <li><i data-feather="check"></i> JavaScript / ES6+</li>
+                  <li><i data-feather="check"></i> React / Vue.js</li>
+                  <li><i data-feather="check"></i> Performance & SEO Optimization</li>
+                </ul>
+              </div>
+              
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i data-feather="search"></i>
+                </div>
+                <h3 class="service-title">SEO Optimization</h3>
+                <p class="service-description">
+                    Meningkatkan visibilitas dan peringkat sebuah situs web pada mesin pencari.
+                </p>
+                <ul class="service-features">
+                    <li><i data-feather="check"></i> Technical SEO</li>
+                    <li><i data-feather="check"></i> On-Page Optimization</li>
+                    <li><i data-feather="check"></i> Speed Improvements</li>
+                    <li><i data-feather="check"></i> Analytics Setup</li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon">
+                  <i data-feather="link"></i>
+                </div>
+                <h3 class="service-title">API Integration</h3>
+                <p class="service-description">
+                  Menghubungkan aplikasi Anda dengan layanan eksternal secara efisien untuk pertukaran data yang cepat dan aman.
+                </p>
+                <ul class="service-features">
+                  <li><i data-feather="check"></i> RESTful & GraphQL API</li>
+                  <li><i data-feather="check"></i> Real-Time Data Sync</li>
+                  <li><i data-feather="check"></i> Auth & Token Handling</li>
+                  <li><i data-feather="check"></i> Third-Party Integration</li>
+                </ul>
+              </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section id="portfolio" class="portfolio section">
+  <div class="container">
+      <div class="section-header">
+          <h2 class="section-title">My <span class="text-highlight">Portfolio</span></h2>
+          <p class="section-subtitle">A collection of my recent projects and work</p>
+      </div>
+
+      <!-- Portfolio Filters -->
+      <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web-design">Web App</button>
+          <button class="filter-btn" data-filter="frontend">WordPress</button>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid">
+          <!-- Project 1 -->
+          <div class="portfolio-item" data-category="web-design,frontend">
+              <div class="portfolio-item-inner">
+                  <div class="portfolio-img">
+                      <img src="assets/images/img1.jpg" alt="E-commerce Website">
+                      <div class="portfolio-overlay">
+                          <div class="portfolio-overlay-content">
+                              <h3 class="portfolio-title">Rupa Darsana</h3>
+                              <p class="portfolio-category">Web Portfolio Untuk Photographer</p>
+                              <button class="portfolio-view-btn" data-project="1">
+                                  <i data-feather="eye"></i> View Project
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="portfolio-item" data-category="ui-ux,web-design">
+              <div class="portfolio-item-inner">
+                  <div class="portfolio-img">
+                      <img src="assets/images/img3.jpg" alt="Dashboard UI">
+                      <div class="portfolio-overlay">
+                          <div class="portfolio-overlay-content">
+                              <h3 class="portfolio-title">Langit Janji</h3>
+                              <p class="portfolio-category">Website Usaha Wedding</p>
+                              <button class="portfolio-view-btn" data-project="2">
+                                  <i data-feather="eye"></i> View Project
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="portfolio-item" data-category="frontend,mobile">
+              <div class="portfolio-item-inner">
+                  <div class="portfolio-img">
+                      <img src="assets/images/img2.jpg" alt="Mobile App Interface">
+                      <div class="portfolio-overlay">
+                          <div class="portfolio-overlay-content">
+                              <h3 class="portfolio-title">Hijrah Harmoni</h3>
+                              <p class="portfolio-category">Website Travel Haji & Umrah</p>
+                              <button class="portfolio-view-btn" data-project="3">
+                                  <i data-feather="eye"></i> View Project
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="portfolio-item" data-category="ui-ux">
+              <div class="portfolio-item-inner">
+                  <div class="portfolio-img">
+                      <img src="assets/images/img4.jpg" alt="Landing Page Design">
+                      <div class="portfolio-overlay">
+                          <div class="portfolio-overlay-content">
+                              <h3 class="portfolio-title">Sandykala Coffe</h3>
+                              <p class="portfolio-category">Website Jualana Kopi</p>
+                              <button class="portfolio-view-btn" data-project="4">
+                                  <i data-feather="eye"></i> View Project
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Project 5
+          <div class="portfolio-item" data-category="web-design,frontend">
+              <div class="portfolio-item-inner">
+                  <div class="portfolio-img">
+                      <img src="assets/images/portfolio/project5.jpg" alt="Corporate Website">
+                      <div class="portfolio-overlay">
+                          <div class="portfolio-overlay-content">
+                              <h3 class="portfolio-title">Corporate Website</h3>
+                              <p class="portfolio-category">Web Design / Frontend</p>
+                              <button class="portfolio-view-btn" data-project="5">
+                                  <i data-feather="eye"></i> View Project
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+           P
+          <div class="portfolio-item" data-category="mobile,ui-ux">
+              <div class="portfolio-item-inner">
+                  <div class="portfolio-img">
+                      <img src="assets/images/portfolio/project6.jpg" alt="Fitness App">
+                      <div class="portfolio-overlay">
+                          <div class="portfolio-overlay-content">
+                              <h3 class="portfolio-title">Fitness App</h3>
+                              <p class="portfolio-category">Mobile / UI/UX</p>
+                              <button class="portfolio-view-btn" data-project="6">
+                                  <i data-feather="eye"></i> View Project
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+
+      <!-- View More Button -->
+      <!-- <div class="portfolio-more">
+          <button class="btn btn-outline">View More Projects</button>
+      </div> -->
+  </div>
+</section>
+
+<!-- Portfolio Modal -->
+<div class="portfolio-modal">
+  <div class="modal-overlay"></div>
+  <div class="modal-container">
+      <button class="modal-close">
+          <i data-feather="x"></i>
+      </button>
+      <div class="modal-content">
+          <!-- Content will be loaded dynamically via JavaScript -->
+      </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Brand Info -->
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">Frontendra</a>
+                <p class="footer-description">
+                    Merancang pengalaman digital yang unggul melalui desain web yang inovatif dan pengembangan antarmuka pengguna yang profesional
+                </p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Dribbble"><i data-feather="dribbble"></i></a>
+                    <a href="#" aria-label="Github"><i data-feather="github"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h3 class="footer-title">Contact Me</h3>
+                <ul>
+                    <li>
+                        <i data-feather="mail"></i>
+                        <a href="">indrahidayatpermana09@gmail.com</a>
+                    </li>
+                    <li>
+                        <i data-feather="phone"></i>
+                        <a href="">+62 815 7480 8331</a>
+                    </li>
+                    <li>
+                        <i data-feather="map-pin"></i>
+                        <span>Tasimalaya, Indonesia</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p class="copyright">
+                &copy; <span id="year"></span> Frontendra. All rights reserved.
+            </p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <!-- JavaScript -->
     <script src="main.js"></script>
-
-  </body>
-  </html>
+    <script>
+        // Initialize feather icons
+        feather.replace();
+    </script>
+</body>
+</html>

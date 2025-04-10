@@ -1,0 +1,243 @@
+
+
+
+
+
+
+
+
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .hero-title {
+        font-size: 2.75rem;
+    }
+    
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .hero-image {
+        margin-top: 3rem;
+    }
+
+    .badges {
+        justify-content: center;
+    }
+
+    .mockup-browser {
+        width: 500px;
+      }
+
+    /* ABOUT */
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        margin-bottom: 3rem;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
+    
+    .about-details {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .detail-item {
+        justify-content: center;
+    }
+    
+    .about-actions {
+        justify-content: center;
+    }
+
+    /* SERVICES */
+    .services-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    /* PORTFOLIO */
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+    
+    .navbar-collapse {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-2);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: var(--transition-normal);
+        z-index: 999;
+    }
+    
+    .navbar-collapse.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .navbar-cta {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .placeholder-image {
+        height: 300px;
+    }
+    
+    .circle-1 {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .tech-stack {
+        text-align: center;
+    }
+    
+    .badges {
+        justify-content: center;
+    }
+
+    .mockup-browser {
+        width: 300px;
+      }
+
+    /* SERVICES */
+    .service-card {
+        padding: 2rem;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+    
+    .service-icon i {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* PORTFOLIO */
+    .portfolio-filters {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .modal-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .modal-content .project-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content .project-links {
+        flex-direction: column;
+    }
+    
+    .modal-content .project-links a {
+        justify-content: center;
+    }
+
+    /* FOOTER */
+    .footer-bottom {
+        flex-direction: row;
+        text-align: left;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-actions .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* SERVICES */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    /* PORTFOLIO */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-img {
+        height: 200px;
+    }
+
+    /* FOOTER */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-brand {
+        max-width: 100%;
+    }
+  }
+
+
+
+
+
