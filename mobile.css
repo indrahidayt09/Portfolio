@@ -1,11 +1,4 @@
-
-
-
-
-
-
-
-
+/* LAPTOP */
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;
@@ -78,6 +71,7 @@
     }
   }
   
+  /* TABLET */
   @media (max-width: 768px) {
     .navbar-toggler {
         display: block;
@@ -193,6 +187,7 @@
     }
   }
 
+  /* MOBILE */
   @media (max-width: 576px) {
     .section-title {
         font-size: 2rem;
@@ -241,3 +236,33 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  

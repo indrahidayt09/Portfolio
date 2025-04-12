@@ -17,18 +17,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       feather.replace();
   });
-  
-  // Close mobile menu when clicking on a link
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-          if (navbarCollapse.classList.contains('show')) {
-              navbarCollapse.classList.remove('show');
-              navbarToggler.querySelector('i').setAttribute('data-feather', 'menu');
-              feather.replace();
-          }
-      });
+
+//   NAVLINK ACTIVE
+// Ambil semua elemen nav-link
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function () {
+    // Hapus class 'active' dari semua link
+    navLinks.forEach(nav => nav.classList.remove('active'));
+
+    // Tambahkan class 'active' ke link yang diklik
+    this.classList.add('active');
   });
+});
+
+  
+  
   
   // Add scroll class to header
   window.addEventListener('scroll', function() {
@@ -102,40 +107,7 @@ function updateParallax() {
   }
 });
 
-
-
-//=========== Portfolio Filtering ===========
-function portfolioFilter() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
-  
-  filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          // Remove active class from all buttons
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          
-          // Add active class to clicked button
-          button.classList.add('active');
-          
-          const filterValue = button.getAttribute('data-filter');
-          
-          portfolioItems.forEach(item => {
-              if (filterValue === 'all') {
-                  item.style.display = 'block';
-              } else {
-                  const categories = item.getAttribute('data-category').split(',');
-                  if (categories.includes(filterValue)) {
-                      item.style.display = 'block';
-                  } else {
-                      item.style.display = 'none';
-                  }
-              }
-          });
-      });
-  });
-}
-
-// ======== SERVICES ========= //
+// =========== SERVICES =========== //
 // Service Card Animation
 function animateServiceCards() {
     const serviceCards = document.querySelectorAll('.service-card');
@@ -173,6 +145,38 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(servicesSection);
     }
 });
+
+
+// =========== Portfolio Filtering =========== //
+function portfolioFilter() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+  filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          button.classList.add('active');
+          
+          const filterValue = button.getAttribute('data-filter');
+          
+          portfolioItems.forEach(item => {
+              if (filterValue === 'all') {
+                  item.style.display = 'block';
+              } else {
+                  const categories = item.getAttribute('data-category').split(',');
+                  if (categories.includes(filterValue)) {
+                      item.style.display = 'block';
+                  } else {
+                      item.style.display = 'none';
+                  }
+              }
+          });
+      });
+  });
+}
 
 // Portfolio Hover Effects
 function portfolioHover() {
@@ -217,7 +221,7 @@ function portfolioModal() {
           date: "April 2025",
           technologies: "HTML, CSS, JavaScript",
           liveUrl: "https://indrahidayt09.github.io/Rupa-Darsana/",
-          githubUrl: "#"
+          githubUrl: "https://github.com/indrahidayt09/Rupa-Darsana"
       },
       {
           id: 2,
@@ -229,7 +233,7 @@ function portfolioModal() {
           date: "Januri 2025",
           technologies: "HTML, CSS, JavaScript",
           liveUrl: "https://indrahidayt09.github.io/Langit-Janji/",
-          githubUrl: "#"
+          githubUrl: "https://github.com/indrahidayt09/Langit-Janji"
       },
       {
           id: 3,
@@ -241,7 +245,7 @@ function portfolioModal() {
           date: "November 2024",
           technologies: "HTML, CSS, JavaScript",
           liveUrl: "https://indrahidayt09.github.io/Hijrah-Harmoni/",
-          githubUrl: "#"
+          githubUrl: "https://github.com/indrahidayt09/Hijrah-Harmoni"
       },
       {
           id: 4,
@@ -253,7 +257,7 @@ function portfolioModal() {
           date: "September 2024",
           technologies: "HTML, CSS, JavaScript",
           liveUrl: "https://indrahidayt09.github.io/SandykalaCoffee/",
-          githubUrl: "#"
+          githubUrl: "https://github.com/indrahidayt09/SandykalaCoffee"
       }
   ];
   
@@ -339,3 +343,15 @@ document.addEventListener('DOMContentLoaded', function() {
   portfolioHover();
   portfolioModal();
 });
+
+
+
+
+
+
+
+
+
+
+
+

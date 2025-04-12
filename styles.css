@@ -40,7 +40,7 @@
   --transition-slow: 0.5s ease;
 }
 
-/* Base Styles */
+/* Root Html */
 * {
   margin: 0;
   padding: 0;
@@ -59,6 +59,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Root Content */
 a {
   text-decoration: none;
   color: inherit;
@@ -80,7 +81,7 @@ img {
   padding: 0 1.5rem;
 }
 
-/* Buttons */
+/* Root Buttons */
 .btn {
   display: inline-block;
   padding: 0.4rem 1.5rem;
@@ -116,7 +117,7 @@ img {
   box-shadow: var(--shadow-md);
 }
 
-/* Text Highlight */
+/* Root Text */
 .text-highlight {
   color: var(--primary-light);
   position: relative;
@@ -136,7 +137,7 @@ img {
   border-radius: 2px;
 }
 
-/* Navigation */
+/* NAVBAR STYLES */
 .header {
   padding: 0 7%;
   position: fixed;
@@ -147,11 +148,6 @@ img {
   background-color: rgba(18, 18, 18, 0.8);
   backdrop-filter: blur(10px);
   transition: var(--transition-normal);
-}
-
-.header.scrolled {
-  background-color: rgba(18, 18, 18, 0.95);
-  box-shadow: var(--shadow-md);
 }
 
 .navbar {
@@ -228,12 +224,9 @@ img {
 .navbar-img img {
   overflow: hidden;
   border-radius: 50%;
-
 }
 
-
-
-/* Hero Section */
+/* HERO STYLES */
 .hero {
   min-height: 100vh;
   padding-top: 6rem;
@@ -429,7 +422,6 @@ img {
 }
 
 /* ABOUT STYLES */
-/* Section Styles */
 .section {
   padding: 6rem 0;
   position: relative;
@@ -455,7 +447,6 @@ img {
   margin: 0 auto;
 }
 
-/* About Section */
 .about-content {
   display: flex;
   align-items: center;
@@ -533,36 +524,6 @@ img {
   line-height: 1.7;
 }
 
-/* .about-details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.detail-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.detail-item i {
-  color: var(--primary);
-  font-size: 1.2rem;
-  margin-top: 0.3rem;
-}
-
-.detail-item h4 {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: 0.3rem;
-}
-
-.detail-item p {
-  font-weight: 600;
-} */
-
 /* Skills */
 .skills {
   margin-bottom: 2.5rem;
@@ -636,7 +597,6 @@ img {
   }
 }
 
-/* About Actions */
 .about-actions {
   display: flex;
   gap: 1rem;
@@ -648,7 +608,6 @@ img {
 }
 
 /* SERVICES STYLES */
-/* Services Section */
 .services {
   background-color: var(--dark-1);
   position: relative;
@@ -756,7 +715,7 @@ img {
   color: var(--primary);
 }
 
-/* PPORTFOLIO STYLES*/
+/* PORTFOLIO STYLES*/
 .portfolio {
   background-color: var(--dark-2);
 }
@@ -886,7 +845,7 @@ img {
   margin-top: 2rem;
 }
 
-/* Portfolio Modal */
+/* MODAL BOX STYLES */
 .portfolio-modal {
   position: fixed;
   top: 0;
@@ -1066,7 +1025,6 @@ img {
 
 
 /* FOOTER STYLES */
-/* Footer Section */
 .footer {
   background-color: var(--dark-2);
   padding: 5rem 0 2rem;
@@ -1193,6 +1151,10 @@ img {
   color: var(--text-secondary);
 }
 
+.footer-contact li:hover {
+  text-decoration: underline;
+}
+
 .footer-contact i {
   color: var(--primary);
   margin-top: 0.2rem;
@@ -1227,4 +1189,215 @@ img {
 
 .footer-legal a:hover {
   color: var(--primary-light);
+}
+
+/* ====== ANIMATIONS ====== */
+
+/* Animasi 1: Code Editor Effect */
+.mockup-grid-item.code-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.mockup-grid-item.code-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 90%, rgba(255,255,255,0.1) 100%);
+  animation: codeScroll 8s linear infinite;
+}
+
+.mockup-grid-item.code-animation::after {
+  content: '\a<div class="container">\A  <header class="header">\A    <nav class="navbar">\A      <!-- Navigation -->\A    </nav>\A  </header>\A</div>';
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: var(--primary-light);
+  text-shadow: 0 0 5px var(--primary);
+  opacity: 0.8;
+}
+
+@keyframes codeScroll {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Animasi 2: UI Components */
+.mockup-grid-item.ui-animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 1rem;
+}
+.mockup-grid-item.ui-animation .ui-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+  color: rgb(152, 152, 152);
+  width: 80%;
+  height:20%;
+  background-color: var(--dark-4);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.mockup-grid-item.ui-animation .ui-element::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  animation: uiShine 3s infinite;
+}
+@keyframes uiShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Animasi 3: Design Process */
+.mockup-grid-item.design-animation {
+  position: relative;
+  overflow: hidden;
+}
+.mockup-grid-item.design-animation .design-stage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: designFade 8s infinite;
+}
+.mockup-grid-item.design-animation .wireframe {
+  background: 
+      linear-gradient(to right, var(--dark-4) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--dark-4) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation-delay: 0s;
+}
+.mockup-grid-item.design-animation .mockup {
+  background-color: var(--dark-4);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  animation-delay: 2s;
+}
+.mockup-grid-item.design-animation .mockup div {
+  background-color: var(--dark-3);
+  margin: 0.2rem 0;
+  flex: 1;
+}
+.mockup-grid-item.design-animation .final {
+  background-color: var(--primary);
+  opacity: 0.1;
+  animation-delay: 4s;
+}
+@keyframes designFade {
+  0%, 30% { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+
+/* Animasi 4: Responsive Layout */
+.mockup-grid-item.responsive-animation {
+  position: relative;
+  overflow: hidden;
+}
+.mockup-grid-item.responsive-animation .device {
+  position: absolute;
+  background-color: var(--dark-4);
+  border-radius: 3px;
+  transition: all 1s ease;
+}
+.mockup-grid-item.responsive-animation .desktop {
+  width: 90%;
+  height: 70%;
+  top: 15%;
+  left: 5%;
+  animation: deviceSwitch 8s infinite;
+}
+.mockup-grid-item.responsive-animation .tablet {
+  width: 60%;
+  height: 80%;
+  top: 10%;
+  left: 20%;
+  opacity: 0;
+  animation: deviceSwitch 8s infinite 2s;
+}
+.mockup-grid-item.responsive-animation .mobile {
+  width: 30%;
+  height: 90%;
+  top: 5%;
+  left: 35%;
+  opacity: 0;
+  animation: deviceSwitch 8s infinite 4s;
+}
+@keyframes deviceSwitch {
+  0%, 30% { opacity: 1; transform: scale(1); }
+  33%, 36% { opacity: 0; transform: scale(0.8); }
+  39%, 100% { opacity: 0; }
+}
+
+/* Animasi 5: Modern Glass Morphism */
+.mockup-grid-item.modern-animation {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.mockup-grid-item.modern-animation::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+  opacity: 0.1;
+  animation: rotateGradient 15s linear infinite;
+}
+.mockup-grid-item.modern-animation .floating-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.mockup-grid-item.modern-animation .dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-light);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float 8s infinite ease-in-out;
+}
+.mockup-grid-item.modern-animation .dot:nth-child(1) {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+}
+.mockup-grid-item.modern-animation .dot:nth-child(2) {
+  top: 60%;
+  left: 20%;
+  animation-delay: 1s;
+}
+.mockup-grid-item.modern-animation .dot:nth-child(3) {
+  top: 40%;
+  left: 70%;
+  animation-delay: 2s;
+}
+@keyframes rotateGradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
 }
