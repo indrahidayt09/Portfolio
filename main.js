@@ -32,9 +32,6 @@ navLinks.forEach(link => {
   });
 });
 
-  
-  
-  
   // Add scroll class to header
   window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
@@ -252,12 +249,25 @@ function portfolioModal() {
           title: "Sandykala Coffe",
           category: "Website Jualan Kopi Aceh",
           description: "Didesain modern dan responsif, menampilkan produk secara menarik dan mudah diakses di semua perangkat. Navigasi simpel memudahkan pelanggan memilih varian kopi, membaca deskripsi, dan melakukan pemesanan dengan cepat.",
-          image: "assets/images/img4.jpg",
+          image: "assets/images/img4.png",
           client: "Sandykala Coffe",
           date: "September 2024",
           technologies: "HTML, CSS, JavaScript",
           liveUrl: "https://indrahidayt09.github.io/SandykalaCoffee/",
           githubUrl: "https://github.com/indrahidayt09/SandykalaCoffee"
+      },
+
+      {
+          id: 5,
+          title: "Rejeki Kita",
+          category: "Website Yayasan Amal",
+          description: "Didesain modern dan responsif, menampilkan informasi yang mudah diakses dan dibaca. Navigasi simpel memudahkan para orang baik untuk bersedekah.",
+          image: "assets/images/rejekita.png",
+          client: "Rejeki Kita",
+          date: "September 2024",
+          technologies: "HTML, CSS, JavaScript",
+          liveUrl: "https://indrahidayt09.github.io/Rejeki-Kita/",
+          githubUrl: "https://github.com/indrahidayt09/Rejeki-Kita"
       }
   ];
   
