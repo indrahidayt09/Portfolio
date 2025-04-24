@@ -2,9 +2,7 @@
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;
-        text-align: center;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding: 1.8rem 1rem;
     }
     
     .hero-title {
@@ -16,49 +14,14 @@
         margin-right: auto;
     }
     
-    .hero-actions {
-        justify-content: center;
-    }
-    
     .hero-image {
         margin-top: 3rem;
-    }
-
-    .badges {
-        justify-content: center;
     }
 
     .mockup-browser {
         width: 500px;
       }
 
-    /* ABOUT */
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-image {
-        margin-bottom: 3rem;
-    }
-    
-    .about-text {
-        text-align: center;
-    }
-    
-    .about-details {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .detail-item {
-        justify-content: center;
-    }
-    
-    .about-actions {
-        justify-content: center;
-    }
 
     /* SERVICES */
     .services-grid {
@@ -109,14 +72,7 @@
         margin-top: 1.5rem;
     }
     
-    .hero-title {
-        font-size: 2.25rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
+    /* hero */
     .placeholder-image {
         height: 300px;
     }
@@ -127,16 +83,54 @@
     }
     
     .tech-stack {
-        text-align: center;
-    }
-    
-    .badges {
-        justify-content: center;
-    }
+        flex-wrap: nowrap;
+    }    
 
     .mockup-browser {
         width: 300px;
       }
+
+    /* ABOUT */
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 60px;
+      }
+    
+      .about-text {
+        width: 100%;
+      }
+    
+      .about-image .image-wrapper {
+        width: 260px;
+        height: 260px;
+      }
+
+      .badges {
+        justify-content: center;
+
+      }
+
+      .about .circle-4 {
+        top: 450px;
+      }
+
+      .circle-11 {
+        width: 400px;
+        height: 200px;
+        bottom: 50px;
+        left: -50px;
+        opacity: 10%;
+      }
+      
+      .circle-12 {
+        width: 550px;
+        height: 550px;
+        top: 300px;
+        right: 50px;
+      }
+      
 
     /* SERVICES */
     .service-card {
@@ -154,45 +148,34 @@
         height: 24px;
     }
 
-    /* PORTFOLIO */
-    .portfolio-filters {
-        gap: 0.5rem;
-    }
-    
-    .filter-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-    
-    .modal-content {
-        padding: 2rem 1.5rem;
-    }
-    
-    .modal-content .project-details {
-        grid-template-columns: 1fr;
-    }
-    
-    .modal-content .project-links {
-        flex-direction: column;
-    }
-    
-    .modal-content .project-links a {
-        justify-content: center;
-    }
-
     /* FOOTER */
-    .footer-bottom {
-        flex-direction: row;
-        text-align: left;
+    .footer .container {
+        flex-direction: column;
     }
   }
 
   /* MOBILE */
   @media (max-width: 576px) {
-    .section-title {
-        font-size: 2rem;
+
+    /* hero */
+    .hero-content {
+        gap: 1rem;
     }
     
+    /* about */
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image .image-wrapper {
+        width: 220px;
+        height: 220px;
+      }
+
+    .about-text {
+        text-align: left;
+    }
+
     .about-actions {
         flex-direction: column;
         align-items: center;
@@ -201,6 +184,10 @@
     .about-actions .btn {
         width: 100%;
         max-width: 250px;
+    }
+
+    .badges {
+        justify-content: left;
     }
 
     /* SERVICES */
@@ -213,13 +200,7 @@
     }
 
     /* PORTFOLIO */
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
     
-    .portfolio-img {
-        height: 200px;
-    }
 
     /* FOOTER */
     .footer-grid {
@@ -234,6 +215,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 

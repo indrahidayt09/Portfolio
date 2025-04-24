@@ -145,214 +145,70 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // =========== Portfolio Filtering =========== //
-function portfolioFilter() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
-  
-  filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          // Remove active class from all buttons
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          
-          // Add active class to clicked button
-          button.classList.add('active');
-          
-          const filterValue = button.getAttribute('data-filter');
-          
-          portfolioItems.forEach(item => {
-              if (filterValue === 'all') {
-                  item.style.display = 'block';
-              } else {
-                  const categories = item.getAttribute('data-category').split(',');
-                  if (categories.includes(filterValue)) {
-                      item.style.display = 'block';
-                  } else {
-                      item.style.display = 'none';
-                  }
-              }
-          });
-      });
-  });
-}
-
-// Portfolio Hover Effects
-function portfolioHover() {
-  const portfolioItems = document.querySelectorAll('.portfolio-item-inner');
-  
-  portfolioItems.forEach(item => {
-      const img = item.querySelector('.portfolio-img img');
-      const overlay = item.querySelector('.portfolio-overlay');
-      const overlayContent = item.querySelector('.portfolio-overlay-content');
-      
-      item.addEventListener('mouseenter', () => {
-          img.style.transform = 'scale(1.1)';
-          overlay.style.opacity = '1';
-          overlayContent.style.transform = 'translateY(0)';
-      });
-      
-      item.addEventListener('mouseleave', () => {
-          img.style.transform = 'scale(1)';
-          overlay.style.opacity = '0';
-          overlayContent.style.transform = 'translateY(20px)';
-      });
-  });
-}
-
-// Portfolio Modal
-function portfolioModal() {
-  const modal = document.querySelector('.portfolio-modal');
-  const modalContainer = document.querySelector('.modal-container');
-  const modalClose = document.querySelector('.modal-close');
-  const modalContent = document.querySelector('.modal-content');
-  const viewButtons = document.querySelectorAll('.portfolio-view-btn');
-  
-  // Sample project data (in a real scenario, you might fetch this from an API)
-  const projects = [
-      {
-          id: 1,
-          title: "Rupa DarsanA",
-          category: "Photography Web Portfolio",
-          description: "Dirancang dengan desain responsif dan modern, memastikan tampilan yang optimal di semua perangkat. Menggunakan layout minimalis, fokus utama pada foto, dengan navigasi yang mudah dan galeri gambar interaktif.",
-          image: "assets/images/img1.jpg",
-          client: "Rupa Darsana.",
-          date: "April 2025",
-          technologies: "HTML, CSS, JavaScript",
-          liveUrl: "https://indrahidayt09.github.io/Rupa-Darsana/",
-          githubUrl: "https://github.com/indrahidayt09/Rupa-Darsana"
-      },
-      {
-          id: 2,
-          title: "Langit Janji",
-          category: "Wedding Website",
-          description: "Website pernikahan ini dirancang elegan dan responsif, memudahkan pengunjung melihat detail acara, galeri foto, dan jadwal pernikahan. Desain sederhana dan navigasi intuitif membuatnya mudah diakses di semua perangkat.",
-          image: "assets/images/img3.jpg",
-          client: "Langit Janji.",
-          date: "Januri 2025",
-          technologies: "HTML, CSS, JavaScript",
-          liveUrl: "https://indrahidayt09.github.io/Langit-Janji/",
-          githubUrl: "https://github.com/indrahidayt09/Langit-Janji"
-      },
-      {
-          id: 3,
-          title: "Hijrah Harmoni",
-          category: "Travel Haji & Umrah Website",
-          description: "Didesain responsif dan informatif, memudahkan jamaah mengakses info paket, jadwal keberangkatan, dan layanan. Tampilannya modern dan sederhana, dengan navigasi yang mudah di semua perangkat.",
-          image: "assets/images/img2.jpg",
-          client: "Hijrah Harmoni",
-          date: "November 2024",
-          technologies: "HTML, CSS, JavaScript",
-          liveUrl: "https://indrahidayt09.github.io/Hijrah-Harmoni/",
-          githubUrl: "https://github.com/indrahidayt09/Hijrah-Harmoni"
-      },
-      {
-          id: 4,
-          title: "Sandykala Coffe",
-          category: "Website Jualan Kopi Aceh",
-          description: "Didesain modern dan responsif, menampilkan produk secara menarik dan mudah diakses di semua perangkat. Navigasi simpel memudahkan pelanggan memilih varian kopi, membaca deskripsi, dan melakukan pemesanan dengan cepat.",
-          image: "assets/images/img4.png",
-          client: "Sandykala Coffe",
-          date: "September 2024",
-          technologies: "HTML, CSS, JavaScript",
-          liveUrl: "https://indrahidayt09.github.io/SandykalaCoffee/",
-          githubUrl: "https://github.com/indrahidayt09/SandykalaCoffee"
-      },
-
-      {
-          id: 5,
-          title: "Rejeki Kita",
-          category: "Website Yayasan Amal",
-          description: "Didesain modern dan responsif, menampilkan informasi yang mudah diakses dan dibaca. Navigasi simpel memudahkan para orang baik untuk bersedekah.",
-          image: "assets/images/rejekita.png",
-          client: "Rejeki Kita",
-          date: "September 2024",
-          technologies: "HTML, CSS, JavaScript",
-          liveUrl: "https://indrahidayt09.github.io/Rejeki-Kita/",
-          githubUrl: "https://github.com/indrahidayt09/Rejeki-Kita"
-      }
-  ];
-  
-  viewButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          const projectId = parseInt(button.getAttribute('data-project'));
-          const project = projects.find(p => p.id === projectId);
-          
-          if (project) {
-              modalContent.innerHTML = `
-                  <img src="${project.image}" alt="${project.title}">
-                  <h2>${project.title}</h2>
-                  <span class="project-category">${project.category}</span>
-                  <p class="project-description">${project.description}</p>
-                  
-                  <div class="project-details">
-                      <div class="detail-item">
-                          <i data-feather="user"></i>
-                          <div>
-                              <h4>Client</h4>
-                              <p>${project.client}</p>
-                          </div>
-                      </div>
-                      <div class="detail-item">
-                          <i data-feather="calendar"></i>
-                          <div>
-                              <h4>Date</h4>
-                              <p>${project.date}</p>
-                          </div>
-                      </div>
-                      <div class="detail-item">
-                          <i data-feather="code"></i>
-                          <div>
-                              <h4>Technologies</h4>
-                              <p>${project.technologies}</p>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <div class="project-links">
-                      <a href="${project.liveUrl}" class="btn live-demo" target="_blank">
-                          <i data-feather="external-link"></i>
-                          Live Demo
-                      </a>
-                      <a href="${project.githubUrl}" class="btn github" target="_blank">
-                          <i data-feather="github"></i>
-                          View Code
-                      </a>
-                  </div>
-              `;
-              
-              modal.classList.add('active');
-              document.body.style.overflow = 'hidden';
-              feather.replace();
-          }
-      });
-  });
-  
-  // Close modal
-  function closeModal() {
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-  }
-  
-  modalClose.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-          closeModal();
-      }
-  });
-  
-  // Close with ESC key
-  document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-          closeModal();
-      }
-  });
-}
-
-// Initialize portfolio functionality
 document.addEventListener('DOMContentLoaded', function() {
-  portfolioFilter();
-  portfolioHover();
-  portfolioModal();
-});
+    // Initialize Feather Icons
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+  
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Filter portfolio items
+        portfolioItems.forEach(item => {
+          const categories = item.getAttribute('data-category').split(',');
+          
+          if (filterValue === 'all' || categories.includes(filterValue)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  
+    // Toggle category dropdown
+    const categoryToggle = document.querySelector('.category-toggle');
+    const category = document.querySelector('.category');
+    
+    if (categoryToggle) {
+      categoryToggle.addEventListener('click', function() {
+        category.classList.toggle('active');
+      });
+    }
+  
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!category.contains(e.target) && !e.target.classList.contains('category-toggle')) {
+        category.classList.remove('active');
+      }
+    });
+  
+    // Portfolio item click functionality
+    const viewButtons = document.querySelectorAll('.portfolio-view-btn');
+    
+    viewButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const projectId = this.getAttribute('data-project');
+        // Here you can add functionality to show project details
+        console.log(`Viewing project ${projectId}`);
+        // Example: window.location.href = `project-details.html?id=${projectId}`;
+      });
+    });
+  });
 
 
 
