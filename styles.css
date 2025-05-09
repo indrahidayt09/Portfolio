@@ -736,11 +736,11 @@ section {
   transition: all 0.3s ease;
 }
 
-.category-content a:hover, 
-.category-content a.active {
+.category-content a:hover {
   background-color: var(--primary);
   color: #fff;
 }
+
 
 /* Portfolio Grid */
 .portfolio-grid {

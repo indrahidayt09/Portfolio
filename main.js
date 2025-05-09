@@ -209,15 +209,3 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-
-
-
-
-
-
-
-
-
-
-
-
