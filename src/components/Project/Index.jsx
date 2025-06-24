@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import AnimatedCursor from "./AnimatedCursor";
 import CursorImagePreview from "./CursorImagePreview";
 import ProjectItem from "./ProjectItem";
-import ProjectHeader from "./ProjectHeader";
 import { projects } from "../../lib/data";
 
 const ProjectList = () => {
@@ -18,17 +16,15 @@ const ProjectList = () => {
   }, []);
 
   return (
-    <div className="relative z-50 ">
-      <AnimatedCursor mousePos={mousePos} />
+    <div className="relative z-50">
+    
       <CursorImagePreview
         mousePos={mousePos}
         hoveredIndex={hoveredIndex}
         projects={projects}
       />
 
-      <section className="min-h-screen  text-white py-20 px-4 sm:px-8">
-        <ProjectHeader />
-
+      <section className="py-25  text-white pt-6">
         <div className="max-w-full mx-auto">
           <div className="space-y-1">
             {projects.map((project, index) => (

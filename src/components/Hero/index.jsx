@@ -1,44 +1,44 @@
-import SocialIcon from "./Icon";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-// Components
-import MainIntro from "./MainIntro";
-import { LanIcon } from "./HeroFragments";
-import Desc from "./Desc";
+gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero() {
+export const HeroSection = () => {
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(
+      textRef.current,
+      {
+        y: 400,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: textRef.current,
+          scrub: 1.5,
+          start: "center 60%",
+          toggleActions: "play none none reverse",
+        },
+      },
+      textRef
+    );
+  }, []);
+
   return (
-    <section className="text-white flex justify-center items-center pt-20 px-5 min-h-screen">
-      <Container />
-    </section>
-  );
-}
-
-function Container() {
-  return (
-    <div className="relative flex flex-col justify-between items-center w-full min-h-screen my-auto">
-      {/* Main Intro + CTA (mobile) */}
-      <div className="flex justify-center items-center m-auto pr-23">
-        <div>
-          <MainIntro />
-          {/* CTA Button (desktop only) */}
-          
-        </div>
-      </div>
-
-      {/* Language Icon */}
-      <div className="absolute right-0">
-        <LanIcon />
-      </div>
-
-      {/* Social Icon (currently hidden) */}
-      <div className="absolute top-28 left-7 xl:left-0 lg:translate-y-1/2 hidden">
-        <SocialIcon />
-      </div>
-
-      {/* Description (currently hidden) */}
-      <div className="hidden absolute">
-        <Desc />
-      </div>
+    <div className="w-full min-h-[100vh] relative">
+      <img
+        src="./public/assets/hero.png"
+        alt="Hero Image"
+        className="object-cover w-full h-screen"
+      />
+      <h1
+        ref={textRef}
+        className="absolute text-white bottom-0 left-0 p-5 text-8xl md:text-9xl mix-blend-difference"
+      >
+        <span className="hidden md:block">AS A <br /> FRONT END DEVELOPER</span>
+        <span className="block md:hidden">AS A <br /> FRONT <br /> END <br /> DEVE <br /> LOPER</span>
+      </h1>
     </div>
   );
-}
+};

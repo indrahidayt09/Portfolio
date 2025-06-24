@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 
 const CursorImagePreview = ({ mousePos, hoveredIndex, projects }) => {
@@ -15,15 +16,18 @@ const CursorImagePreview = ({ mousePos, hoveredIndex, projects }) => {
     });
   }, [mousePos, hoveredIndex]);
 
-  return (
+  const preview = (
     <div
       ref={cursorImgRef}
-      className="cursor-img fixed top-0 left-0 h-40 w-40 rounded-md bg-cover bg-center z-[99] pointer-events-none transform -translate-x-1/2 -translate-y-1/2 shadow-xl border border-white/20"
+      className="cursor-img fixed top-0 left-0 h-40 w-40 rounded-md bg-cover bg-center z-[100] pointer-events-none transform -translate-x-1/2 -translate-y-1/2 shadow-xl border border-white/20"
       style={{
-        backgroundImage: hoveredIndex !== null ? `url(${projects[hoveredIndex].img})` : "none",
+        backgroundImage:
+          hoveredIndex !== null ? `url(${projects[hoveredIndex].img})` : "none",
       }}
     />
   );
+
+  return createPortal(preview, document.getElementById("cursor-portal"));
 };
 
 export default CursorImagePreview;

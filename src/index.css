@@ -1,18 +1,46 @@
 @import "tailwindcss";
 @font-face {
-  font-family: 'Butler';
-  src: url('./src/fonts/Korcy.otf') format('truetype');
+  font-family: "Butler";
+  src: url("./src/fonts/Korcy.otf") format("truetype");
 }
 
 * {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  margin: 0;
+  paddinf: 0;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
-    min-height: 100px;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: block;
 }
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #010101;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
 
 @keyframes bounceY {
   0% {
@@ -32,5 +60,41 @@ body {
   animation: bounceY 2s infinite;
 }
 
+/* FONTS FAMILY */
+@font-face {
+  font-family: "Grota";
+  src: url("/fonts/Grota-Medium.otf") format("truetype");
+}
+@font-face {
+  font-family: "Grota-Thin";
+  src: url("/fonts/Grota-Thin.otf") format("truetype");
+}
+@font-face {
+  font-family: "Grota-Regular";
+  src: url("/fonts/Grota-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "Roslindale";
+  src: url("/fonts/Roslindale_Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Moglan";
+  src: url("/fonts/Molgan-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: "ME";
+  src: url("/fonts/Monument-Regular.otf") format("truetype");
+}
 
+.rotate-text, .rotate {
+  animation: spin 6s linear infinite;
+}
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
