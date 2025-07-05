@@ -4,17 +4,17 @@ const ProjectItem = ({ project, index, onHover, onLeave }) => {
       onMouseEnter={() => onHover(index)}
       onMouseLeave={onLeave}
       onClick={() => window.open(project.link, "_blank")}
-      className="group relative p-6 md:p-8 text-2xl md:text-3xl  border-b border-[#1c1d20]  transition-colors duration-100 cursor-pointer"
+      className="group relative p-6 md:p-7  border-b-[1px] border-gray-400  transition-colors duration-100 cursor-pointer"
     >
-      <div className="flex justify-between items-center ">
+      <div className="flex justify-between items-center px-5 lg:px-20">
         <span
-          style={{ fontFamily: "Outfit", fontWeight: 400 }}
-          className="group-hover:text-slate-400 group-hover:-translate-x-3 text-[#1c1d20]  duration-200 transition-all "
+          style={{ fontFamily: "Roslindale", fontWeight: 100 }}
+          className="group-hover:text-black/70 group-hover:-translate-x-3 text-black  duration-200 transition-all text-6xl md:text-8xl"
         >
           {project.title}
         </span>
-        <span className="group-hover:-translate-x-3 text-[#1c1d20]  duration-200 transition-all group-hover:text-slate-500 text-[1.2rem]">
-          {project.category}
+        <span style={{ fontFamily: "Outfit", fontWeight: 300 }} className="opacity-0 group-hover:-translate-x-3 group-hover:opacity-100 text-black/50  duration-200 transition-all group-hover:text-slate-500 text-[1.2rem] text-xs md:text-xl">
+          {project.category}...
         </span>
       </div>
     </div>

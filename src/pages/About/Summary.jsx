@@ -8,6 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 export const Summary = () => {
   const imageRef = useRef(null);
   const containerRef = useRef(null);
+  const arrowRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -16,18 +18,38 @@ export const Summary = () => {
         { y: 50 },
 
         {
-          y: -100,
+          y: -50,
 
           ease: "power3.out",
           transformOrigin: "center center",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top center",
+            start: "top 70%",
             end: "bottom top",
-            scrub: 0.5,
+            scrub: 1,
           },
         }
       );
+
+      gsap.to(arrowRef.current, {
+        rotate: 45,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          scrub: 1,
+          start: "top 70%",
+        },
+      });
+
+      gsap.to(textRef.current, {
+        y: 50,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 70%",
+          scrub: 1,
+        },
+      });
     }, containerRef);
 
     return () => ctx.revert();
@@ -40,8 +62,11 @@ export const Summary = () => {
     >
       {/* Kiri: Teks */}
       <div className="relative w-full lg:w-1/2">
-        <IoIosArrowRoundForward className="text-3xl text-gray-600 lg:absolute lg:-left-15 top-1 mb-3 rotate-50 lg:rotate-0" />
-        <div>
+        <IoIosArrowRoundForward
+          ref={arrowRef}
+          className="text-3xl text-gray-600 lg:absolute lg:-left-15  mb-3 "
+        />
+        <div ref={textRef} className="text-justify">
           <p
             style={{ fontFamily: "Montserrat", fontWeight: 500 }}
             className="pb-5 text-base text-[#1c1d20]  lg:max-w-2xs"
@@ -52,7 +77,7 @@ export const Summary = () => {
           </p>
           <p
             style={{ fontFamily: "Montserrat", fontWeight: 500 }}
-            className="text-base text-[#1c1d20]  lg:max-w-2xs"
+            className="text-base text-[#1c1d20] pb-5  lg:max-w-2xs"
           >
             I learned everything on my own through the internet and various
             online courses. From there, I started to understand how websites
@@ -60,6 +85,17 @@ export const Summary = () => {
             skills like these will be very useful in the future, and I want to
             keep growing in this field.
           </p>
+          {/* <p
+            style={{ fontFamily: "Montserrat", fontWeight: 500 }}
+            className="text-base text-[#1c1d20]  lg:max-w-2xs"
+          >
+            I’m committed to continuously learning and improving my skills, no
+            matter the challenges. For me, exploring the world of technology
+            isn’t just a hobby—it’s part of a long-term journey. I believe that
+            with consistency and a strong willingness to grow, I can create
+            something meaningful and impactful—not just for myself, but for
+            others as well.
+          </p> */}
         </div>
       </div>
 

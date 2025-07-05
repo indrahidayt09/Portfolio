@@ -1,7 +1,7 @@
 // Components
 import ButtonAbout from "./ButtonAbout";
-import Project from "../../pages/About/Project";
 import { IoIosArrowRoundForward } from "react-icons/io";
+
 
 // GSAP
 import { useEffect, useRef } from "react";
@@ -51,7 +51,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="scroll-section scroll-smooth w-full min-h-screen bg-white relative flex flex-col justify-center"
+      className="scroll-section scroll-smooth w-full min-h-[80vh] bg-white relative flex flex-col justify-center"
     >
    
       <div className="flex flex-col lg:flex-row gap-10 px-10 lg:px-25 pt-20 pb-10 relative">
@@ -78,7 +78,7 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-              <Project />
+           
 
     </section>
   );

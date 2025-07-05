@@ -1,11 +1,13 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const HeroSection = () => {
   const textRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     gsap.to(
@@ -26,19 +28,27 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-[100vh] relative">
-      <img
-        src="./public/assets/hero.png"
-        alt="Hero Image"
-        className="object-cover w-full h-screen"
-      />
-      <h1
-        ref={textRef}
-        className="absolute text-white bottom-0 left-0 p-5 text-8xl md:text-9xl mix-blend-difference"
-      >
-        <span className="hidden md:block">AS A <br /> FRONT END DEVELOPER</span>
-        <span className="block md:hidden">AS A <br /> FRONT <br /> END <br /> DEVE <br /> LOPER</span>
-      </h1>
+    <div className="flex items-center justify-center bg-[url('./public/assets/hero.png')] bg-cover bg-center w-full min-h-screen">
+      <div className="relative w-full h-screen">
+        <h2
+          style={{ fontFamily: "Roslindale", fontWeight: 500 }}
+          className="absolute top-1/2 left-1/2 -translate-x-85 -translate-y-35 text-white text-9xl md:text-9xl uppercase mix-blend-difference max-w-xl leading-27 text-center "
+        >
+          Welcome To My Introduce
+        </h2>
+        <button
+        onClick={() => navigate("/About")}
+          style={{ fontFamily: "Montserrat", fontWeight: 300 }}
+          className="absolute left-1/2 -translate-x-1/2 text-md bottom-13 text-white"
+        >
+          I would be truly delighted if you’d like to learn more about the
+          journey that has shaped who I am today — you can find it on my{" "}
+          <span className="underline hover:translate-y-2  cursor-pointer text-blue-600 hover:text-blue-800 font-semibold">
+            About Me!
+          </span>
+          .
+        </button>
+      </div>
     </div>
   );
 };

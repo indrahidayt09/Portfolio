@@ -243,7 +243,7 @@ const Navbar = () => {
 
       <div
         ref={menuOverlayRef}
-        className="menu-overlay fixed w-screen h-screen bg-black z-40"
+        className="menu-overlay fixed w-screen h-screen backdrop-blur-md bg-black/30 z-40"
         style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
       >
         <div
